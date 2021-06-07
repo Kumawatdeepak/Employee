@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import { Route, Switch } from 'react-router';
+import Regemployee from './components/register_employee';
+import Showemployee from './components/show_employee';
+import Editemployee from './components/update_employee';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends Component {
+  render() {
+    return (
+      <div>
+        <Switch>
+           <Route exact path="/"><Regemployee/></Route>
+           <Route path="/showlist"><Showemployee/></Route>
+           <Route path="/editemployee/:id"><Editemployee /></Route>
+    
+
+           
+        </Switch>
+      </div>
+    )
+  }
 }
-
-export default App;
